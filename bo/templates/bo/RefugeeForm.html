@@ -1,0 +1,14 @@
+<html>
+<body>
+
+{% block content %}
+    <h1>New post</h1>
+    <form method="POST" class="post-form" enctype="multipart/form-data" action="/bo/showRefugee/">
+    	{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn">Save</button>
+    </form>
+{% endblock %}
+
+</body>
+</html>

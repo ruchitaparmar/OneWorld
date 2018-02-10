@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import RefugeeForm, ShelterForm
 from .models import Refugee, Shelter
+from .filters import RefugeeFilter
 from django.core.files.storage import FileSystemStorage
 # Create your views here.
 
@@ -12,27 +13,27 @@ def search(request):
 
 
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    return render(request, 'bo/dashboard.html')
 
 
 def addRefugee(request):
     form = RefugeeForm()
-    return render(request, 'RefugeeForm.html', {'form': form})
+    return render(request, 'bo/RefugeeForm.html', {'form': form})
 
 
 def addShelter(request):
     form = ShelterForm()
-    return render(request, 'ShelterForm.html', {'form': form})
+    return render(request, 'bo/ShelterForm.html', {'form': form})
 
 
 def refugeeCard(request, pk):
 	refugee = Refugee.objects.get(pk=pk)
-	return render(request, 'RefugeeCard.html', {'refugee': refugee})
+	return render(request, 'bo/RefugeeCard.html', {'refugee': refugee})
 
 
 def shelterCard(request, pk):
 	shelter = Shelter.objects.get(pk=pk)
-	return render(request, 'ShelterCard.html', {'shelter': shelter})
+	return render(request, 'bo/ShelterCard.html', {'shelter': shelter})
 
 
 def showRefugee(request):
@@ -47,7 +48,7 @@ def showRefugee(request):
 			return redirect('refugeeCard', pk=refugee.pk)
 	else:
 		form = RefugeeForm()
-	return render(request, 'RefugeeForm.html', {'form': form})
+	return render(request, 'bo/RefugeeForm.html', {'form': form})
 
 
 def showShelter(request):
@@ -60,4 +61,4 @@ def showShelter(request):
 			return redirect('shelterCard', pk=shelter.pk)
 	else:
 		form = ShelterForm()
-	return render(request, 'ShelterForm.html', {'form': form})
+	return render(request, 'bo/ShelterForm.html', {'form': form})
