@@ -27,7 +27,7 @@ class Refugee(models.Model):
 		('M', 'Married'),
 		('S', 'Single')
 	)
-	maritalStatus = models.CharField(choices=maritalStatusChoices, default='S')
+	maritalStatus = models.CharField(choices=maritalStatusChoices, default='S', max_length=1)
 
 	fullNameOfSpouse = models.CharField(max_length=100)
 	numOfOffspring = models.IntegerField()
