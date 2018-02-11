@@ -6,14 +6,14 @@ class RefugeeForm(forms.ModelForm):
 
     class Meta:
         model = Refugee
-        exclude = ('Comments',)
+        exclude = ('Comments', 'bID')
 
 
 class ShelterForm(forms.ModelForm):
 
     class Meta:
         model = Shelter
-        exclude = ()
+        exclude = ('bID', )
 
 
 '''

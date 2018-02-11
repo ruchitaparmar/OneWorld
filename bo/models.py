@@ -1,16 +1,18 @@
 from django.db import models
 from django.core.validators import RegexValidator
+# from django.contrib.auth.models import User
 
 
 class Shelter(models.Model):
 	shelterID = models.CharField(max_length=8, primary_key=True)
-	bID = models.ForeignKey('signIn.Benefactor', on_delete=models.CASCADE)
+	bID = models.CharField(max_length=8, default='00000000')
 	latitude = models.CharField(max_length=50)
 	longitude = models.CharField(max_length=50)
 	status = models.CharField(max_length=50)
 	health = models.CharField(max_length=50)
 	food = models.CharField(max_length=50)
 	numberOfRefugees = models.IntegerField()
+	capacity = models.IntegerField()
 
 	def __str__(self):
 		return '%s %s' % (self.shelterID, self.bID)
@@ -26,14 +28,18 @@ class Refugee(models.Model):
 	lastName = models.CharField(max_length=50)
 
 	dob = models.DateField()
-
+	genderChoices = (
+		('M', 'Male'),
+		('F', 'Female')
+	)
+	gender = models.CharField(max_length=1, default='F', choices=genderChoices)
 	nationality = models.CharField(max_length=50)
 
-	bID = models.ForeignKey('signIn.Benefactor', on_delete=models.CASCADE)
+	bID = models.CharField(max_length=8, default='00000000')
 	sID = models.ForeignKey('Shelter', on_delete=models.CASCADE)
 
-	# refImage = models.FileField(upload_to="Images/")
-	refImage = models.FileField()
+	refImage = models.FileField(upload_to="backupImage/")
+	# refImage = models.FileField()
 
 	maritalStatusChoices = (
 		('M', 'Married'),
@@ -42,7 +48,6 @@ class Refugee(models.Model):
 	maritalStatus = models.CharField(choices=maritalStatusChoices, default='S', max_length=1)
 
 	fullNameOfSpouse = models.CharField(max_length=100)
-	numOfOffspring = models.IntegerField()
 	fullNameOfOffspring = models.CharField(max_length=100)
 	fullNameOfFather = models.CharField(max_length=100)
 	fullNameOfMother = models.CharField(max_length=100)

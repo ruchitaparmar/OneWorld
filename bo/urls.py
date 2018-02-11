@@ -7,7 +7,7 @@ urlpatterns = [url(r'^dashboard/$', views.dashboard, name='dashboard'),
                url(r'^addShelter/$', views.addShelter, name='addShelter'),
                url(r'^showRefugee/$', views.showRefugee, name='showRefugee'),
                url(r'^showShelter/$', views.showShelter, name='showShelter'),
-               url(r'^refugeeCard/$', views.refugeeCard, name='refugeeCard'),
-               url(r'^shelterCard/$', views.shelterCard, name='shelterCard'),
+               url(r'^refugeeCard/(?P<pk>\d+)/$', views.refugeeCard, name='refugeeCard'),
+               url(r'^shelterCard/(?P<pk>\d+)/$', views.shelterCard, name='shelterCard'),
                url(r'^search/$', views.search, name='search')
                ]
