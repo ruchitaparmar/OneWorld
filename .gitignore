@@ -106,5 +106,5 @@ venv.bak/
 
 
 #Exceptions
-!kairos-face-sdk-python
-!media
+!kairos-face-sdk-python/
+!media/
