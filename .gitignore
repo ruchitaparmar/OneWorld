@@ -1,7 +1,3 @@
-#Exceptions
-!kairos-face-sdk-python
-!media
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -107,3 +103,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+
+#Exceptions
+!kairos-face-sdk-python
+!media
