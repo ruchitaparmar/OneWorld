@@ -8,6 +8,18 @@ from forum.models import Post
 '''
 
 
+def home(request):
+    return render(request, 'registration/home.html')
+
+
+def menu(request):
+    return render(request, 'registration/menu.html')
+
+
+def donorPage(request):
+    return render(request, 'registration/donorPage.html')
+
+
 def register(request):
     registered = False
     if request.method == 'POST':

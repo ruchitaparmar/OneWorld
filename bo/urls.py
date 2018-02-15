@@ -9,5 +9,8 @@ urlpatterns = [url(r'^dashboard/$', views.dashboard, name='dashboard'),
                url(r'^showShelter/$', views.showShelter, name='showShelter'),
                url(r'^refugeeCard/(?P<pk>\d+)/$', views.refugeeCard, name='refugeeCard'),
                url(r'^shelterCard/(?P<pk>\d+)/$', views.shelterCard, name='shelterCard'),
-               url(r'^search/$', views.search, name='search')
+               url(r'^search/$', views.search, name='search'),
+               url(r'^heatmap/$', views.heatmap, name='heatmap'),
+               url(r'^sendRequest/$', views.sendRequest, name='sendRequest'),
+               url(r'^$', views.dashboard, name='dashboard')
                ]

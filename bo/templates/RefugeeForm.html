@@ -1,14 +1,134 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Profile Form</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">  
+      
+ <link rel="stylesheet" href="/static/assets/forms/css/style.css">  
+</head>
+
 <body>
 
-{% block content %}
+	{% block content %}
     <h1>New post</h1>
     <form method="POST" class="post-form" enctype="multipart/form-data" action="/bo/showRefugee/">
     	{% csrf_token %}
+      
+      {{ form.as_p }}
+<!--       <div class="float-label">
         {{ form.as_p }}
+      </div> -->
+      
         <button type="submit" class="btn">Save</button>
     </form>
 {% endblock %}
 
+
+<!-- 
+
+    <input id="image" type="file"><i class="fa fa-camera-retro fa-lg"></i></input>
+  </h1>
+  
+  <div class="float-label">
+    <input type="text" name="f-name" id="f-name" />
+    <label for="f-name">First Name</label>
+  </div>
+  <div class="float-label">
+    <input type="text" name="f-name" id="f-name" />
+    <label for="f-name">Last Name</label>
+  </div>
+  <div class="float-label">
+    <input type="date" name="f-name" id="f-name" />
+    <label for="f-name"></label>
+  </div>
+  
+  <div class="float-label">
+    <input type="text" name="text" id="nationality" />
+    <label for="nation">Nationality</label>
+  </div>
+    
+  <div class="float-label">
+    <i class="fa fa-caret-down"></i>
+    <select id="units" name="units">
+      <option value=""></option>
+      <option value="imperial">XX-----</option>
+      <option value="Metric">-------</option>
+    </select>    
+    <label for="units">BID</label>
+  </div>
+  
+  
+  <div class="float-label">
+    <i class="fa fa-caret-down"></i>
+    <select id="units" name="units">
+      <option value=""></option>
+      <option value="imperial">XX-----</option>
+      <option value="Metric">-------</option>
+    </select>    
+    <label for="units">SID</label>
+  </div>
+  
+ 
+    <div class="float-label">
+      <i class="fa fa-caret-down"></i>
+      <select name="gender" id="gender">
+        <option value=""></option>
+        <option value="male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+      <label for="gender">Gender</label>
+    </div>
+    
+    <div class="float-label">
+      <i class="fa fa-caret-down"></i>
+      <select name="gender" id="gender">
+        <option value=""></option>
+        <option value="male">Single</option>
+        <option value="Female">Married</option>
+      </select>
+      <label for="gender">Marital Status</label>
+    </div>  
+  
+  <div class="float-label">
+    
+    <input type="text" name="pw" id="pw" />
+    <label for="pw">Name of Spouse</label>
+  </div>
+  
+   
+  
+   <div class="float-label">
+    
+    <input type="text" name="pw" id="pw" />
+    <label for="pw">Name of Offspring</label>
+  </div>
+  
+   <div class="float-label">
+    
+    <input type="text" name="pw" id="pw" />
+    <label for="pw">Name of Father</label>
+  </div>
+  
+   <div class="float-label">
+    <input type="text" name="pw" id="pw" />
+    <label for="pw">Name of Mother</label>
+  </div>
+  
+  <div class="float-label">
+    <textarea name="notes" id="notes"></textarea>
+    <label for="notes">Additional Comments</label>
+  </div>
+  <button class="btn" type="submit"><a href="RefugeeCard.html">Submit</a></button>
+  <button class="btn" id="clear" type="reset" value="Reset">Reset</button>
+</form> -->
+
+ 
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> 
+ 
+<!--      <script  src="/static/assets/forms/js/index.js"></script>   -->
+
 </body>
+
 </html>

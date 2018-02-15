@@ -16,13 +16,15 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
     url(r'^boadmin/', admin.site.urls),
     url(r'^admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     url(r'^bo/', include('bo.urls', namespace="bOrg")),
-    url(r'^signIn/', include('signIn.urls', namespace="signIn")),
+    url(r'', include('signIn.urls', namespace="signIn")),
     url(r'^login/$', auth_views.login, name='login'),
     url(r'^logout/$', auth_views.logout, name='logout'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

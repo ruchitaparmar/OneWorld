@@ -38,7 +38,7 @@ class Refugee(models.Model):
 	bID = models.CharField(max_length=8, default='00000000')
 	sID = models.ForeignKey('Shelter', on_delete=models.CASCADE)
 
-	refImage = models.FileField(upload_to="backupImage/")
+	refImage = models.FileField(upload_to="backupImages/")
 	# refImage = models.FileField()
 
 	maritalStatusChoices = (

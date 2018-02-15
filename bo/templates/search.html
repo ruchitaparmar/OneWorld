@@ -13,9 +13,13 @@
                   <li>Date Of Birth : {{ refugee.dob }}</li>
                   <li>Nationality : {{ refugee.nationality }}</li>
                   <li>Marital Status: {{ refugee.maritalStatus }}</li>
-                  <!-- <a href="{% url 'refugee_listing:details' refugee.id %}">
+                  <li>Name of Father: {{ refugee.fullNameOfFather }}</li>
+                  <li>Name of Mother: {{ refugee.fullNameOfMother }}</li>
+                  <li>Name of Offspring: {{ refugee.fullNameOfOffspring }}</li>
+                  <li>Name of Spouse: {{ refugee.fullNameOfSpouse }}</li>
+                  <a href="/bo/refugeeCard/{{refugee.ID}}">
                       <button>View ID</button>
-                  </a> -->
+                  </a>
               </ul>
           </div>
       {% endfor %}

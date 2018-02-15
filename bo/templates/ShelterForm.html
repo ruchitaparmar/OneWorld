@@ -1,7 +1,28 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Profile Form</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+  
+      <link rel="stylesheet" href="/static/assets/forms/css/style.css">
+
+  
+</head>
+
 <body>
 
-{% block content %}
+
+  <h1>
+    Add new shelter details
+    <br>
+    
+   
+  </h1>
+
+	{% block content %}
     <h1>New post</h1>
     <form method="POST" class="post-form" action="/bo/showShelter/">
     	{% csrf_token %}
@@ -10,5 +31,69 @@
     </form>
 {% endblock %}
 
+<!--   
+  <div class="float-label">
+    <input type="text" name="f-name" id="f-name" />
+    <label for="f-name">Shelter ID</label>
+  </div>
+
+  <div class="float-label">
+    <i class="fa fa-caret-down"></i>
+    <select id="units" name="units">
+      <option value=""></option>
+      <option value="imperial">XX-----</option>
+      <option value="Metric">-------</option>
+    </select>    
+    <label for="units">BID</label>
+  </div>
+
+  <div class="float-label">
+    <input type="text" name="f-name" id="f-name" />
+    <label for="f-name">Latitude</label>
+  </div>
+
+    <div class="float-label">
+    <input type="text" name="f-name" id="f-name" />
+    <label for="f-name">Longitude</label>
+  </div>
+
+  <div class="float-label">
+    <input type="text" name="f-name" id="f-name" />
+    <label for="f-name">Status</label>
+  </div>
+  
+  <div class="float-label">
+    <input type="text" name="text" id="nationality" />
+    <label for="nation">Health</label>
+  </div>
+    
+
+  <div class="float-label">
+    <input type="text" name="text" id="nationality" />
+    <label for="nation">Food</label>
+  </div>
+
+
+  <div class="float-label">
+    <input type="text" name="text" id="nationality" />
+    <label for="nation">Number of Refugees</label>
+  </div>
+  
+<div class="float-label">
+    <textarea name="notes" id="notes"></textarea>
+    <label for="notes">Additional Comments</label>
+  </div>  
+
+  <button class="btn" type="submit">Submit</button>
+  <button class="btn" id="clear" type="reset" value="Reset">Reset</button>
+</form>   -->
+
+ 
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+<!--     <script  src="/static/assets/forms/js/index.js"></script> -->
+
+
 </body>
+
 </html>
